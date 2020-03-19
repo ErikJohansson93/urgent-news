@@ -1,0 +1,7 @@
+name: 'Urgent news'
+description: 'This module provides a fully configurable block that is used for announicing urgent news.'
+package: User interface
+core: 8.x
+configure: urgent_news.settings
+type: module
+
