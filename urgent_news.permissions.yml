@@ -1,0 +1,4 @@
+'administer urgent news':
+  title: 'Administer Urgent news'
+  description: 'Administer the urgent news module.'
+  restrict access: true
