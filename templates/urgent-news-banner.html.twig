@@ -1,0 +1,30 @@
+{#
+/**
+ * @file
+ * Default theme implementation for urgent news banner.
+ *
+ *
+ * Available variables:
+ * - title: The immediate children of the current node rendered as an unordered
+ *   list.
+ * - body: Depth of the current node within the book outline. Provided
+ *   for context.
+ *
+ * @ingroup themeable
+ */
+#}
+
+{{ attach_library('urgent_news/urgent_news') }}
+{% if content.active_state %}
+  <div class="urgent-news-banner urgent-news-banner-info">
+    <div class="urgent-news-banner-content">
+
+      <h2><div class="urgent-news-title">{{ content.title }}</div></h2>
+      <div class="urgent-news-message">{{ content.body }}</div>
+
+      <div class="urgent-news-close">
+        <span class="urgent-news-close-button">X</span>
+      </div>
+    </div>
+  </div>
+{% endif %}

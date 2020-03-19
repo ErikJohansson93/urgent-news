@@ -5,4 +5,40 @@
  * Main module file for urgent news module
  */
 
+/**
+ * Implements hook_theme().
+ */
+function urgent_news_theme($existing, $type, $theme, $path) {
+  return [
+    'urgent_news_banner' => [
+      'template' => 'urgent-news-banner',
+      'variables' => [
+        'content' => [],
+      ],
+    ],
+  ];
+}
 
+/**
+ * Implements template_preprocess_HOOK().
+ */
+function template_preprocess_urgent_news_banner(&$variables) {
+  $values = \Drupal::state()->getMultiple([
+      'urgent_news_active_state',
+      'urgent_news_title',
+      'urgent_news_body',
+    ]);
+
+  if (empty($values)) {
+    $variables['content'] = [
+      'title' => 'You need to configure this block.',
+    ];
+  } else {
+    $variables['content'] = [
+      'active_state' => $values['urgent_news_active_state'],
+      'title' => $values['urgent_news_title'],
+      'body' => $values['urgent_news_body'],
+    ];
+  }
+
+}
