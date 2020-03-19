@@ -1,0 +1,7 @@
+urgent_news.settings:
+  path: /admin/config/user-interface/urgent_news
+  defaults:
+    _title: 'Urgent News'
+    _form: \Drupal\urgent_news\Form\SettingsForm
+  requirements:
+    _permission: 'administer urgent news'

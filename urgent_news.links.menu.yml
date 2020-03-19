@@ -1,0 +1,6 @@
+urgent_news.settings_menu_item:
+  title: 'Urgent news'
+  description: 'Settings for the Urgent news module.'
+  menu_name: admin
+  parent: system.admin_config_ui
+  route_name: urgent_news.settings
